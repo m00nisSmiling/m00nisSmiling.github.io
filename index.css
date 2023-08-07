@@ -34,6 +34,7 @@ border-radius:10px;
 .products{
 display:grid;
 grid-template-columns: repeat(3, 200px);
+gap:30px;
 justify-content:center;
 }
 .moon-logo{
