@@ -37,6 +37,12 @@ grid-template-columns: repeat(3, 200px);
 gap:30px;
 justify-content:center;
 }
+.big-button{
+display:grid;
+grid-template-columns: repeat(2, 200px);
+gap:30px;
+justify-content:center;
+}
 .moon-logo{
 background-color:white;
 border:1px solid black;
@@ -61,9 +67,4 @@ grid-template-columns: repeat(2, 250px);
 grid-template-columns: repeat(1, 250px);
 }
 }
-.big-button{
-display:grid;
-grid-template-columns: repeat(2, 200px);
-gap:30px;
-justify-content:center;
-}
+
