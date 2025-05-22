@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  <title>CyberBase_By_m00n</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-width: 100vw;
+      background-color: black;
+      text-align: center;
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: lime;
+      font-size: 40px;
+    }
+
+    h3 {
+      color: blue;
+    }
+
+    .vn1 {
+      color: lime;
+      font-weight: bold;
+      background: #5F6CD3;
+      border-radius: 10px;
+      height: 38px;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+
+    textarea.text11 {
+      color: lime;
+      background-color: #2c3e4c;
+      font-size: 14px;
+      border: 3px solid blue;
+      border-radius: 20px;
+      width: 900px;
+      height: 300px;
+      resize: none;
+      padding: 12px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .aaa {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .search {
+      width: 400px;
+      height: 120px;
+      border: #006884 2px outset;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .search form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    input[type="search"],
+    input[type="text"] {
+      height: 36px;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      font-size: 15px;
+      color: lime;
+      border-radius: 5px;
+      background: blue;
+      height: 36px;
+    }
+
+    .payload-container {
+      width: 1000px;
+      margin: auto;
+      border: #006884 2px outset;
+      background: #93b9e1;
+      border-radius: 30px;
+      padding: 20px;
+    }
+
+    pre {
+      color: white;
+      font-size: 12px;
+      text-align: left;
+      margin: 20px auto;
+      white-space: pre-wrap;
+      width: 1000px;
+    }
+  </style>
+  <script>
+    function setPayload(text) {
+      document.querySelector('.text11').innerHTML = text;
+    }
+  </script>
+</head>
+<body>
+  <h1>
+    <font color='yellow'>Cyb</font><font color='lime'>erB</font><font color='red'>ase</font>
+  </h1>
+
+  <div class="aaa">
+    <div class="search">
+      <form action="https://www.exploit-db.com/search" method="GET">
+        <input placeholder="Enter the exploit or version" name="q" type="search">
+        <input name="submit" type="submit" value="SEARCH">
+      </form>
+    </div>
+
+    <div class="search">
+      <form action="https://api.ipgeolocation.io/ipgeo">
+        <input placeholder="Enter the IP address" name="ip" type="text">
+        <input name="apiKey" type="hidden" value="e6e8fe7cd6ab46c2884c758ec679ba52">
+        <input name="submit" type="submit" value="CHECK">
+      </form>
+    </div>
+  </div>
+
+  <div class="payload-container">
+    <h1><b class='d1'>CLICK</b> & <b class='d1'>COPY</b> THE PAYLOADS</h1>
+    <select class='vn1' id="payload-options" onchange="setPayload(this.value)">
+      <option value="">Select a payload</option>
+      <option value="'&nbsp;OR&nbsp;SLEEP(5)&nbsp;--">Example Payload 1</option>
+    </select>
+    <textarea class="text11" disabled></textarea>
+  </div>
+
+  <pre>
+<font color="gray">
++ CyberBase webpage is created by "m00nissmiling" +
++ Use to upgrade your pentesting skill +
++ And train your skill in "Labs & CTF" +
++ Inject with payloads from this collection +
+</font>
+  </pre>
+</body>
+</html>
