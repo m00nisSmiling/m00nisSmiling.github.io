@@ -4,97 +4,111 @@
     <head>
       <title>CyberBase_By_m00n</title>
     </head>
-    <body>
-      <style>
-        h3 {
-          color: blue;
-        }
+  <center>  <body>
+   <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        select.vn1 {
-          color: lime;
-          font-weight: bold;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-width: 100vw;
+      background-color: black;
+      text-align: center;
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        b.d1 {
-          color: blue;
-        }
+    h1 {
+      color: lime;
+      font-size: 40px;
+    }
 
-        b.k1 {
-          color: red;
-        }
+    h3 {
+      color: blue;
+    }
 
-        b.k2 {
-          color: blue;
-        }
+    .vn1 {
+      color: lime;
+      font-weight: bold;
+      background: #5F6CD3;
+      border-radius: 10px;
+      height: 38px;
+      margin-bottom: 10px;
+      width: 300px;
+    }
 
-        font.j1 {
-          color: red;
-        }
+    textarea.text11 {
+      color: lime;
+      background-color: #2c3e4c;
+      font-size: 14px;
+      border: 3px solid blue;
+      border-radius: 20px;
+      width: 900px;
+      height: 300px;
+      resize: none;
+      padding: 12px;
+      margin: 20px auto;
+      display: block;
+    }
 
-        div.aaa {
-          display: grid;
-          grid-template-columns: repeat(3, 350px);
-          gap: 30px;
-          justify-content: center;
-        }
+    .aaa {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        textarea {
-          color: lime;
-          width: 1400px;
-          height: 300px;
-          padding: 12px 20px;
-          box-sizing: border-box;
-          border: 3px solid blue;
-          border-radius: 35px;
-          background-color: #2c3e4c;
-          font-size: 14px;
-          resize: none;
-        }
+    .search {
+      width: 400px;
+      border: #006884 2px outset;
+      border-radius: 10px;
+      padding: 10px;
+    }
 
-        body {
-          text-align: center;
-          background-position: center;
-          background-repeat: fixed;
-          background-attachment: fixed;
-          background-size: 1500px;
-          background-color: black;
-          font-style: italic;
-        }
+    input[type="search"],
+    input[type="ip"] {
+      width: 100%;
+      height: 36px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
 
-        h1 {
-          color: lime;
-          font-size: 20px;
-        }
+    input[type="submit"] {
+      font-size: 15px;
+      color: lime;
+      border-radius: 5px;
+      background: blue;
+      width: 30%;
+      height: 36px;
+    }
 
-        p {
-          color: red;
-          background: #A0FFA0;
-          opacity: .6;
-        }
+    .payload-container {
+      width: 1000px;
+      margin: auto;
+      border: #006884 2px outset;
+      background: #93b9e1;
+      border-radius: 30px;
+      padding: 20px;
+    }
 
-        button,
-        select,
-        option {
-          background: #5F6CD3;
-          border-radius: 10px;
-          height: 38px
-        }
-
-        button.hello {
-          background: white;
-        }
-
-        pre {
-          color: white;
-          font-size: 15px;
-          position: left;
-        }
-      </style>
-      <h1>
+    pre {
+      color: white;
+      font-size: 12px;
+      text-align: left;
+      margin: 20px auto;
+      white-space: pre-wrap;
+      width: 1000px;
+    }
+  </style>
+      <h2>
         <font color='yellow'>Cyb</font>
         <font color='lime'>erB</font>
         <font color='red'>ase</font>
-      </h1>
+      </h2>
       <div class="aaa">
         <div class="search" style="border: #006884 2px outset; background-position: center;border-radius:10px;width:380px;">
           <form action="https://www.exploit-db.com/search" method="GET">
@@ -116,11 +130,11 @@
       </div>
 
       <center>
-        <div style="border: #006884 10px outset; background-position: center;border-radius:50px;width:1500px;background: #93b9e1;">
+        <div class='payload-container'>
           <center>
-            <h1>
+            <h2>
               <b class='d1'>CLICK</b> & <b class='d1'>COPY</b> THE PAYLOADS
-            </h1>
+            </h2>
           </center>
           <select class='vn1' id="SQLI">
             <option onclick="document.querySelector('.text11').innerHTML='...//....//....//....//....//....//....//....//....//....//....//....//etc/passwd%00';">[LFI] /etc/passwd Bypass</option>
@@ -459,11 +473,12 @@
         }
       </script>
       <pre>
-																<font color="gray">
-+ CyberBase webpage is created by "m00nissmiling" +
-+ Use to upgrade your pentesting skill +
-+ And train your skill in "Labs & CTF" +
-+ Inject with payloads from this collection +
+</body></center>
+													<font color="gray">
+<center>+ CyberBase webpage is created by "m00nissmiling" +</center>
+<center>+ Use to upgrade your pentesting skill +</center>
+<center>+ And train your skill in "Labs & CTF" +</center>
+<center>+ Inject with payloads from this collection +</center>
 </font>
 															</pre>
   </html>
