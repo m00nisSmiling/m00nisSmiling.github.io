@@ -1,12 +1,1343 @@
-<body>no web</body>
-<script>
-let input1= prompt('username');
-let input2= prompt('password');
-if (input2==='moon'){
-alert('OPPS WELCOME SIR, REDIRECTING TO MAIN INDEX PAGE , THANKS.....................')
-document.querySelector('body').innerHTML='<meta http-equiv="Refresh" content="0; url=https://m00nissmiling.github.io/index111111.html" />';
-}else{
-alert('sorry, you cannot enter this website ,'+input1);
-document.querySelector('body').innerHTML='<center><img src="https://i.gifer.com/24Gb.gif" width=200px height=100px></center><center><font color=red><h1>!!!!!!!!! GET OUT FROM THIS WEB !!!!!!!!!!</h1></font></center>';
-}
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Watched Anime List</title>
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #121830;
+      --ink: #e9ecf3;
+      --muted: #a9b1c7;
+      --accent: #6ea8fe;
+      --border: #233055;
+      --row: #0e1530;
+      --row-alt: #0c132a;
+      --glow: 0 10px 35px rgba(110,168,254,0.25);
+      --radius: 16px;
+    }
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font: 500 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--glow);
+      overflow: hidden;
+    }
+    header {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, rgba(110,168,254,0.15), rgba(110,168,254,0.03));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    h1 { font-size: 24px; margin: 0; }
+    .sub { color: var(--muted); font-size: 14px; }
+    #searchBar {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0d1428;
+      color: var(--ink);
+      font-size: 14px;
+      min-width: 220px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+    thead th {
+      text-align: left;
+      font-weight: 700;
+      color: #dbe6ff;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tbody tr:nth-child(even){ background: var(--row-alt); }
+    tbody tr:nth-child(odd){ background: var(--row); }
+    tbody tr:hover { background: rgba(110,168,254,0.10); }
+    .no { width: 60px; color: var(--muted); }
+    .poster img {
+      width: 80px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div>
+          <h1>Watched Anime Movies & Series</h1>
+          <div class="sub">With posters, genres, and ratings</div>
+        </div>
+        <input type="text" id="searchBar" placeholder="Search by name or type...">
+      </header>
+      <table id="animeTable">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Poster</th>
+            <th>Name</th>
+            <th>Types</th>
+            <th>Personal Rating</th>
+            <th>Total Seasons &amp; eps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no">1</td>
+            <td class="poster"><img src="https://i0.wp.com/thevaultpublication.com/wp-content/uploads/2014/11/the-garden-of-words-takao-and-yukino.jpg?fit=1200%2C695&ssl=1" width=100px height=60px></td>
+            <td>The garden of words</td>
+            <td>romance,slice of life,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">2</td>
+            <td class="poster"><img src="https://www.animedep.com/wp-content/uploads/2025/07/5cm-per-second-anime-12.webp" width=100px height=60px></td>
+            <td>5 cm per second</td>
+            <td>romance,slice of life,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">3</td>
+            <td class="poster"><img src="https://sbpress.com/wp-content/uploads/2017/04/YourName-heading.jpg" width=100px height=60px></td>
+            <td>Your name</td>
+            <td>romance,fantasy,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">4</td>
+            <td class="poster"><img src="https://sm.ign.com/ign_nordic/review/w/weathering/weathering-with-you-review_k2qr.jpg" width=100px height=60px></td>
+            <td>Weathering with you</td>
+            <td>romance,fantasy,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">5</td>
+            <td class="poster"><img src="https://i.guim.co.uk/img/media/f560b698843aa8981120c6426c364125bbd4c072/68_0_1200_720/master/1200.jpg?width=700&quality=85&auto=format&fit=max&s=3ef9868d055b5e81b0ad87cc46e35540" width=100px height=60px></td>
+            <td>The silent voice</td>
+            <td>romance,slice of life,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">6</td>
+            <td class="poster"><img src="https://thefilmstage.com/wp-content/uploads/2023/03/Suzume-1.jpeg" width=100px height=60px></td>
+            <td>Suzume</td>
+            <td>romance,fantasy,drama</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">7</td>
+            <td class="poster"><img src="https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1563965972711-Z8Q4LSYRMFM5SSAC7PHY/image-asset.jpeg" width=100px height=60px></td>
+            <td>My neighbour totoro</td>
+            <td>fantasy,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">8</td>
+            <td class="poster"><img src="https://i.guim.co.uk/img/media/aa5f12bac3ba95322c58929eab0303262dc20340/321_175_1509_905/master/1509.jpg?width=465&dpr=1&s=none&crop=none" width=100px height=60px></td>
+            <td>KiKi's delivery service</td>
+            <td>fantasy,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">9</td>
+            <td class="poster"><img src="https://cdn.theatlantic.com/thumbor/3UCk1uNc6gh5-HlkAoAxyzweTWw=/0x0:4800x2700/960x540/media/img/mt/2022/09/spirited_away_anniversary_2/original.jpg" width=100px height=60px></td>
+            <td>Spirited Away</td>
+            <td>fantasy,drama</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">10</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/M/MV5BOWE0NTJlYWEtY2NiNy00OTliLWI3NWUtYzY5NmU4OGQ3ZmE5XkEyXkFqcGc@._V1_.jpg" width=100px height=60px></td>
+            <td>I want to eat your pancreas</td>
+            <td>romance,slice of life,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">11</td>
+            <td class="poster"><img src="https://moviemezzanine.com/wp-content/uploads/wind-rises-9-1140x617.jpg" width=100px height=60px></td>
+            <td>The wind rises</td>
+            <td>romance,slice of life,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">12</td>
+            <td class="poster"><img src="https://hanagasaitayo.wordpress.com/wp-content/uploads/2017/03/summer-wars-1.jpg" width=100px height=60px></td>
+            <td>Summer war</td>
+            <td>romance,drama,esport,sci-fic</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">13</td>
+            <td class="poster"><img src="https://s3picturehouses.s3.eu-central-1.amazonaws.com/images/uploads/Film%20Images/WolfChildren-m.jpg" width=100px height=60px></td>
+            <td>Wolf children</td>
+            <td>drama,fantasy</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">14</td>
+            <td class="poster"><img src="https://occ-0-1068-1722.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABauS-6OOiwb5X2mR77XplY6BiPvVxHr89CMElMcjmxa0VrrUqGfoMAcr1KYbQrI6pOoSfZ8L-g8uT-OWLYX4ZrDyB8cR.jpg?r=498" width=100px height=60px></td>
+            <td>A whisker away</td>
+            <td>romance,drama,fantasy</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">15</td>
+            <td class="poster"><img src="https://images.squarespace-cdn.com/content/v1/5b1591bf70e802d439edd4de/cd80dce8-726a-45f8-8206-f3e570208815/WhisperOfTheHeart_Header.jpg" width=100px height=60px></td>
+            <td>Whisper of the heart</td>
+            <td>romance,drama,slice of life</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">16</td>
+            <td class="poster"><img src="https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1687824151184-IZFAM5S69M8KUYR21QAO/cover40.jpg" width=100px height=60px></td>
+            <td>Ponyo</td>
+            <td>romance,fantasy,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">17</td>
+            <td class="poster"><img src="https://cinemacy.com/wp-content/uploads/2015/06/ff20140711a5a-uai-1035x582.jpg" width=100px height=60px></td>
+            <td>When Marnie was there</td>
+            <td>drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">18</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/c7e809c93d6b963876472980c6d73d7f.jpg" width=100px height=60px></td>
+            <td>Anohana</td>
+            <td>drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">19</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/M/MV5BODkzZWUzMjItMmY0OS00NmE2LWJiNjUtMjM1MzJiNTkwYjc3XkEyXkFqcGdeQWxiaWFtb250._V1_.jpg" width=100px height=60px></td>
+            <td>Stand by me Doraemon</td>
+            <td>sci-fic,fantasy,drama,romance</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">20</td>
+            <td class="poster"><img src="https://keithandthemovies.com/wp-content/uploads/2017/12/graveposter.jpg" width=100px height=60px></td>
+            <td>Grave of the fireflies</td>
+            <td>drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">21</td>
+            <td class="poster"><img src="https://ca-times.brightspotcdn.com/dims4/default/b086522/2147483647/strip/true/crop/2885x1623+57+0/resize/1200x675!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F85%2Fdc%2F6ac989f2464da661421c72b2355b%2Fboyandtheheron.jpg" width=100px height=60px></td>
+            <td>The boy and the heron</td>
+            <td>fantasy,drama</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">22</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/3b624448199a3efbcb0d35e1a265fb94.jpe" width=100px height=60px></td>
+            <td>The boy and the beast</td>
+            <td>fantasy,drama,action,comedy</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">23</td>
+            <td class="poster"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/08/kyo-and-ayumu-look-back.jpg" width=100px height=60px></td>
+            <td>Look back</td>
+            <td>drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">24</td>
+            <td class="poster"><img src="https://pic.k-cdn.media/2021/06/20210604-joseetora-01-main00.jpg" width=100px height=60px></td>
+            <td>Josee the tiger and the fish</td>
+            <td>romance,drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">25</td>
+            <td class="poster"><img src="https://lifeincartoonmotion.com/wp-content/uploads/2024/01/ghi_whisperoftheheart_select1.jpg?w=816" width=100px height=60px></td>
+            <td>Whisper of the heart</td>
+            <td>fantasy,drama,action</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">26</td>
+            <td class="poster"><img src="https://www.hollywoodreporter.com/wp-content/uploads/2019/12/ride_your_wave_-_publicity_still_3_-_h_2019_.jpg?w=1296&h=730&crop=1" width=100px height=60px></td>
+            <td>Ride your wave</td>
+            <td>romance,drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">27</td>
+            <td class="poster"><img src="https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2022/10/The-Tunnel-to-Summer-the-Exit-of-Goodbyes-Key-Art.png?fit=1920%2C1080&ssl=1" width=100px height=60px></td>
+            <td>The tunnel to summer</td>
+            <td>fantasy,romance,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">28</td>
+            <td class="poster"><img src="https://www.animationscoop.com/wp-content/uploads/2017/01/ocean-waves-image1.jpg" width=100px height=60px></td>
+            <td>Ocean waves</td>
+            <td>romance,drama,slice of life,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">29</td>
+            <td class="poster"><img src="https://sm.ign.com/ign_me/review/l/liz-and-th/liz-and-the-blue-bird-review_tbcb.jpg" width=100px height=60px></td>
+            <td>Liz and the blue bird</td>
+            <td>drama,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">30</td>
+            <td class="poster"><img src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/4/30/1430388273268/a142ef60-4a9a-427c-9ec1-f89375d960fb-1020x612.jpeg?width=700&quality=85&auto=format&fit=max&s=b2296ed95df66dc1018e3c6cbce3167e" width=100px height=60px></td>
+            <td>A letter to MoMo</td>
+            <td>fantasy,action,comedy</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">31</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/57a62da28f6b49984c90dda2257dd5a2119744fdb6b2fcae8fad094284402ff1.jpg" width=100px height=60px></td>
+            <td>Hyouka</td>
+            <td>mystery,school,slice of life,comedy</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">s1 - 22 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">32</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/dc8ce10a92766c2569e04350e527e3bdd476369b4810bd6553ac68f80bb0b7d2.jpg" width=100px height=60px></td>
+            <td>God of high school</td>
+            <td>shonen,action,comedy,martial art,supernatural</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 25 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">33</td>
+            <td class="poster"><img src="https://hanamidangos.blog/wp-content/uploads/2020/08/My-Teen-Romantic-Comedy-SNAFU-Season-3-release-date-OreGairu-Season-3-July-2020.jpg" width=100px height=60px></td>
+            <td>Oregairu</td>
+            <td>romance,drama,slice of life,school</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss3 - 38 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">34</td>
+            <td class="poster"><img src="https://i0.wp.com/attackongeek.com/wp-content/uploads/2016/12/1071062-netsurfer77-anime-manga-guilty-crown.png?fit=1680%2C1050&ssl=1" width=100px height=60px></td>
+            <td>Guilty crown</td>
+            <td>sci-fic,supernatural,action,romance,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 22eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">35</td>
+            <td class="poster"><img src="https://culturedvultures.com/wp-content/uploads/2023/04/Domestic-Girlfriend-Season-2-803x452.jpeg" width=100px height=60px></td>
+            <td>Domestic girlfriend</td>
+            <td>romance,drama,ecchi,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">36</td>
+            <td class="poster"><img src="https://theotakulifestyle.wordpress.com/wp-content/uploads/2015/05/right.jpg" width=100px height=60px></td>
+            <td>Plastic memories</td>
+            <td>sci-fic,romance,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 13eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">37</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/955d09d7406ee6c28aa274d26bc7b7b12501cc63451eeac978e3e76f22070082.jpg" width=100px height=60px></td>
+            <td>Akame ga kill</td>
+            <td>action,drama,dark fantasy,ecchi,comedy</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">38</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/bc1646ce977003f294596d7522990592f966db04cc7496548bd0655b1006abea._BR-6_AC_SX720_FMjpg_.jpg" width=100px height=60px></td>
+            <td>Another</td>
+            <td>horror,fantasy,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">39</td>
+            <td class="poster"><img src="https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABSbiq0gTrLeyOePmjJ6TdiK1-e3HUOPdQzEZ04mzVDLxW6kAbjSEkcGhP3Kryt8Ff0RamzOP6VsDCC_sC9vtTdIO0sTcJasVg05Y.jpg?r=e45" width=100px height=60px></td>
+            <td>Naruto</td>
+            <td>shonen,action,fantasy,romcom,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">721 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">40</td>
+            <td class="poster"><img src="https://beyondthepanorama.com/wp-content/uploads/2020/10/ylia_orig.jpg" width=100px height=60px></td>
+            <td>Your lie in april</td>
+            <td>drama,slice of life,comedy,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1 - 22eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">41</td>
+            <td class="poster"><img src="https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/ee04b820-5a2f-4599-9793-11a71a9e8e11/37105040-8a4f-11ef-a6a5-0afff2079c59?host=wbd-images.prod-vod.h264.io&partner=beamcom" width=100px height=60px></td>
+            <td>Attack on titan</td>
+            <td>Dark fantasy,action,drama,romance,comedy</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss4 - 94eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">42</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/9c9d601564a39d80cd9f7622842751586827e7897d1f18fb02fff95220407b74.jpg" width=100px height=60px></td>
+            <td>Beyond the boundary</td>
+            <td>fantasy,romcom,drama,action</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">43</td>
+            <td class="poster"><img src="https://img3.hulu.com/user/v3/artwork/ead2a7d7-5a5b-46d1-9207-30bcdcccd73e?base_image_bucket_name=image_manager&base_image=a66f2d61-de80-408b-96a9-dcdc6c5af03e&size=1200x630&format=webp" width=100px height=60px></td>
+            <td>Charlotte</td>
+            <td>sci-fic,supernatural,romcom,drama,action</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1 - 13eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">44</td>
+            <td class="poster"><img src="https://i0.wp.com/www.animefeminist.com/wp-content/uploads/2018/10/bunnygirl1.jpg?fit=956%2C540&ssl=1" width=100px height=60px></td>
+            <td>Bunny girl senpai</td>
+            <td>romcom,slice of life,mystery,school</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1-13eps,mv-2</span></td>
+          </tr>
+          <tr>
+            <td class="no">45</td>
+            <td class="poster"><img src="https://i2.wp.com/butwhythopodcast.com/wp-content/uploads/2021/01/Horimiya-Feature-Image.png?resize=859%2C482&ssl=1" width=100px height=60px></td>
+            <td>Horimiya</td>
+            <td>romcom,drama,slice of life,school</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss2 - 25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">46</td>
+            <td class="poster"><img src="https://miro.medium.com/v2/resize:fit:633/1*ce9tpeNTLwyqYqci_eTiiA.png" width=100px height=60px></td>
+            <td>My little monster</td>
+            <td>romcom,drama,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1 - 13eps,ova - 1</span></td>
+          </tr>
+          <tr>
+            <td class="no">47</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/M/MV5BZDczOTI5MjctYTg4Yy00ZDUwLThhNGMtZDFlOTk5MTI3OGU0XkEyXkFqcGc@._V1_QL75_UX500_CR0,0,500,281_.jpg" width=100px height=60px></td>
+            <td>Kaichou wa maid-sama</td>
+            <td>romcom,drama,slice of life,school</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1 - 26eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">48</td>
+            <td class="poster"><img src="https://confessionsofanotaku.wordpress.com/wp-content/uploads/2017/03/6c71e275e8397efbcdfe73fed13e291e50185f2d_hq.jpg" width=100px height=60px></td>
+            <td>Masamune kun no revenge</td>
+            <td>romcom,drama,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss2 - 25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">49</td>
+            <td class="poster"><img src="https://i0.wp.com/news.qoo-app.com/en/wp-content/uploads/sites/3/2020/03/20032005000655.jpg?fit=840%2C473&ssl=1" width=100px height=60px></td>
+            <td>Balance unlimited</td>
+            <td>action,mystery,crime</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1 - 11eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">50</td>
+            <td class="poster"><img src="https://images.alphacoders.com/995/995884.png" width=100px height=60px></td>
+            <td>Kaguya sama love is war</td>
+            <td>Comedy,slice of life,school,romcom,drama</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss3 - 37eps,ova - 4 </span></td>
+          </tr>
+          <tr>
+            <td class="no">51</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/df61189bed9f5450d84228813d60c311960acdc30b25177ccf79294184aeb7d1._SX1080_FMjpg_.jpg" width=100px height=60px></td>
+            <td>Takopi's original sins</td>
+            <td>Dark fantasy,drama,supernatural</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1-ep6</span></td>
+          </tr>
+          <tr>
+            <td class="no">52</td>
+            <td class="poster"><img src="https://img1.hulu.com/user/v3/artwork/de40d499-fdee-459a-9f4e-d0b35a12f152?base_image_bucket_name=image_manager&base_image=a93a2ef4-a62c-40b7-8aba-ebf72f5c0e75&size=1200x630&format=webp" width=100px height=60px></td>
+            <td>Say i love you</td>
+            <td>romcom,drama,school,slice of life</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1-13eps,ova-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">53</td>
+            <td class="poster"><img src="https://i0.wp.com/www.animefeminist.com/wp-content/uploads/2018/04/TadaKoi1-header2.png?fit=810%2C456&ssl=1" width=100px height=60px></td>
+            <td>Tada never falls in love</td>
+            <td>romcom,drama,school,slice of life</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1-13eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">54</td>
+            <td class="poster"><img src="https://images.squarespace-cdn.com/content/v1/55aaaec7e4b0e8a77a19cc95/1507915769144-U1SAH3RSUMLH049NBJXE/IMG_0197.PNG" width=100px height=60px></td>
+            <td>Relife</td>
+            <td>romcom,drama,school,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1-13eps,ova-4</span></td>
+          </tr>
+          <tr>
+            <td class="no">55</td>
+            <td class="poster"><img src="https://boomzappow.com/wp-content/uploads/2024/07/Kimi-no-Todoke-copy.webp" width=100px height=60px></td>
+            <td>Kimi ni todoke</td>
+            <td>romcom,drama,school,slice of life</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1,ss2,ss3-43eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">56</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/22229a4a8b90ab68ad56a62526d599465d2d0d8d0afe53a3ba6f5b492643b6ea._BR-6_AC_SX720_FMjpg_.jpg" width=100px height=60px></td>
+            <td>Toradora</td>
+            <td>romcom,drama,school,slice of life</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">57</td>
+            <td class="poster"><img src="https://images.squarespace-cdn.com/content/v1/5ace4845e17ba35c9d8eb95e/1625057372868-V7E4EFL35NTYEGYPX1O5/wolf+girl+and+black+prince.png" width=100px height=60px></td>
+            <td>Wolf girl and black girl</td>
+            <td>romcom,drama,school,slice of life</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-12eps,ova-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">58</td>
+            <td class="poster"><img src="https://iwatchedananime.com/wp-content/uploads/2019/01/wo2.png?w=1400" width=100px height=60px></td>
+            <td>Love is hard for otaku</td>
+            <td>romcom,slice of life</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1-11eps,ova-3</span></td>
+          </tr>
+          <tr>
+            <td class="no">59</td>
+            <td class="poster"><img src="https://i.pinimg.com/736x/6f/4d/58/6f4d588f3c1a1fa9e15ae30d87194a4f.jpg" width=100px height=60px></td>
+            <td>Tsundere children</td>
+            <td>comedy,romance,school,slice of life</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">60</td>
+            <td class="poster"><img src="https://animeforums.net/uploads/monthly_2017_10/nisekoi-1.jpg.67ac2d33824d3e7282803b627f142058.jpg" width=100px height=60px></td>
+            <td>Nisekoi</td>
+            <td>comedy,romance,school,slice of life,harem</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1/ss2-32eps,ova-4</span></td>
+          </tr>
+          <tr>
+            <td class="no">61</td>
+            <td class="poster"><img src="https://mechanicalanimereviews.com/wp-content/uploads/2018/02/kakegurui.jpg?w=840" width=100px height=60px></td>
+            <td>Kakegurui</td>
+            <td>ecchi,psychological,mystery</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">62</td>
+            <td class="poster"><img src="https://musicart.xboxlive.com/7/41306100-0000-0000-0000-000000000002/504/image.jpg" width=100px height=60px></td>
+            <td>Iroduku: the world in colors</td>
+            <td>fantasy,supernatural,romance,drama</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-13eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">63</td>
+            <td class="poster"><img src="https://i.pinimg.com/736x/47/45/61/474561c3fcee658dd113f2563447b280.jpg" width=100px height=60px></td>
+            <td>Sakamoto desu ga</td>
+            <td>slice of life,comedy,school</td>
+            <td><font color='yellow'>*****</font></td>
+            <td><span class="pill">ss1-13eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">64</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/f13035075d98ea283ecd3ce2aadb6e6ad2f2f8e722179e6a4af1380902489dba.jpg" width=100px height=60px></td>
+            <td>Inu X Boku</td>
+            <td>Fantasy,Supernatural,Romance,Comedy</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1-12eps,ova-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">65</td>
+            <td class="poster"><img src="https://static.tvtropes.org/pmwiki/pub/images/dddppiduqaan4x_jpg_large.jpg" width=100px height=60px></td>
+            <td>Tsuki ga kirei </td>
+            <td>slice of life,romance,drama,comedy,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">66</td>
+            <td class="poster"><img src="https://wallpapers.com/images/featured/ao-haru-ride-82utz1kwodn2ch2j.jpg" width=100px height=60px></td>
+            <td>Ao haru ride</td>
+            <td>slice of life,romance,drama,comedy,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-12eps,ova-2</span></td>
+          </tr>
+          <tr>
+            <td class="no">67</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/28c000ac40fb2e20fefb6ff2c5ea80503ee2fe795303fe2206715a637d9c603a._SX1080_FMjpg_.jpg" width=100px height=60px></td>
+            <td>3D kanojo</td>
+            <td>slice of life,romance,drama,comedy,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2-24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">68</td>
+            <td class="poster"><img src="https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABXtpPRZNai8GvFSJC2uTwvRvk8Cv9PSpWTCUWNeXCZWQIhGENj3xNt1c22yj1SLiNQd_LS00MlES6KEziZmT9LKFlQ3lB_8FdaF7.jpg?r=9b6" width=100px height=60px></td>
+            <td>The danger in my heart </td>
+            <td>slice of life,romance,drama,comedy,school</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2 - 25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">69</td>
+            <td class="poster"><img src="https://resizing.flixster.com/wArDzoHrQnmizj9LDOAfF-unoDk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p16769751_v_h9_ac.jpg" width=100px height=60px></td>
+            <td>Tamako love story</td>
+            <td>slice of life,romance,drama,comedy,school</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1-12eps,mv-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">70</td>
+            <td class="poster"><img src="https://splashmags.com/wp-content/uploads/2018/07/nazuna-uniform.jpg" width=100px height=60px></td>
+            <td>Fireworks</td>
+            <td>fantasy,drama,romance,school</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">71</td>
+            <td class="poster"><img src="https://media.butwhytho.net/wp-content/uploads/2023/12/IMG_1052.jpeg" width=100px height=60px></td>
+            <td>Summer time rendering</td>
+            <td>dark fantasy,ecchi,action,supernatural,mystery,romcom</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1-25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">72</td>
+            <td class="poster"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3344960/68d010ef649eae396b5004e3f67b6e484d7d7b44/capsule_616x353.jpg?t=1749049260" width=100px height=60px></td>
+            <td>Natsume no yuujinchou</td>
+            <td>shonen,action,fantasy,drama</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss7 - 86eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">73</td>
+            <td class="poster"><img src="https://resizing.flixster.com/IsSZ7YDqsD0WqiBLaVsceTNENAE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18010758_v_h9_aa.jpg" width=100px height=60px></td>
+            <td>Hello world</td>
+            <td>Sci-fic,romance,drama,comedy,action</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">74</td>
+            <td class="poster"><img src="https://cdn.forumcomm.com/dims4/default/4c14aad/2147483647/strip/true/crop/608x405+56+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fforum-communications-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2Fmigration%2F58%2Fc1%2F32938d15ea731886c2bb6277bcc7%2F2387847-noragami-1600x900c-binary-3938315.jpg" width=100px height=60px></td>
+            <td>Noragami</td>
+            <td>fantasy,action,supernatural,romcom</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss2 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">75</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/455280a28b2677b8f4ee1db4da9238c3.jpg" width=100px height=60px></td>
+            <td>First love monster</td>
+            <td>romance,drama,comedy,slice of life</td>
+            <td><font color='yellow'>****</font></td>
+            <td><span class="pill">ss1-12eps, ova-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">76</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/34193f63c3f899ab0202f807018c9a590235890d00ec5acfb83ae7808fa7a4ff.jpg" width=100px height=60px></td>
+            <td>Ikebukuro west gate park</td>
+            <td>romance,drama,comedy,slice of life</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-12</span></td>
+          </tr>
+          <tr>
+            <td class="no">77</td>
+            <td class="poster"><img src="https://daladybug.productions/wp-content/uploads/2017/02/ss-2017-02-15-at-10-20-37.jpg" width=100px height=60px></td>
+            <td>Scum's wish</td>
+            <td>echhi,drama,romcom,slice of life</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">78</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/734e025288588cad837f1fd36b0a9c5f6f8a430c72f0bf02802d369101bdda19.jpg" width=100px height=60px></td>
+            <td>Angel of death</td>
+            <td>horror,mystery,dark fantasy,action</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-16eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">79</td>
+            <td class="poster"><img src="https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2025/03/once-upon-a-witchs-death-wandering-witch-elaina-collab-visual-scaled-e1743479887194.jpg" width=100px height=60px></td>
+            <td>Wandering witch</td>
+            <td>magical,fantasy,comedy,drama</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">80</td>
+            <td class="poster"><img src="https://i.kickstarter.com/assets/011/542/745/3e103be74d83cc8691599bb085fd6eb3_original.jpg?anim=false&fit=cover&gravity=auto&height=873&origin=ugc&q=92&v=1463684232&width=1552&sig=aSX761TAFbNxUp4yZS%2FBvHk7B3S9K1bGOCq72C5YckM%3D" width=100px height=60px></td>
+            <td>Little witch academy</td>
+            <td>magical,fantasy,comedy,drama,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">81</td>
+            <td class="poster"><img src="https://images2.alphacoders.com/134/thumb-1920-1346492.png" width=100px height=60px></td>
+            <td>Mashle: magic and muscle</td>
+            <td>magical,fantasy,comedy,drama,school</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1/2 - 24 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">82</td>
+            <td class="poster"><img src="https://s1.zerochan.net/Gekkan.Shoujo.Nozaki-kun.600.1742019.jpg" width=100px height=60px></td>
+            <td>Gekkan shoujo nozaki kun</td>
+            <td>comedy,romance,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-12eps,special-6</span></td>
+          </tr>
+          <tr>
+            <td class="no">83</td>
+            <td class="poster"><img src="https://image.tmdb.org/t/p/original/AnynQTx0BxLLHht9YTQecOXky8L.jpg" width=100px height=60px></td>
+            <td>Boarding school juliet</td>
+            <td>comedy,romance,action,school,ecchi</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">84</td>
+            <td class="poster"><img src="https://image.tmdb.org/t/p/original/dXGaX995fsbiqJgFRj0CEJKxZVV.jpg" width=100px height=60px></td>
+            <td>The testament of sister new devil</td>
+            <td>fantasy,comedy,romance,action,school,ecchi</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1-22eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">85</td>
+            <td class="poster"><img src="https://comicbook.com/wp-content/uploads/sites/4/2024/11/SAO.jpg?w=1920" width=100px height=60px></td>
+            <td>Sword art online (SAO)</td>
+            <td>Dark fantasy,comedy,romance,action,game</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss3-96eps,mv1/2/3</span></td>
+          </tr>
+          <tr>
+            <td class="no">86</td>
+            <td class="poster"><img src="https://comicbook.com/wp-content/uploads/sites/4/2025/07/Classroom-of-the-Elite-Season-4-Anime-Poster.jpg" width=100px height=60px></td>
+            <td>Classroom of the elite</td>
+            <td>psychological,mystery,comedy,school,action</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss3-38eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">87</td>
+            <td class="poster"><img src="https://avo-magazine.com/wp-content/uploads/2017/01/deathnote.png" width=100px height=60px></td>
+            <td>Death note</td>
+            <td>psychological,mystery,dark fantasy,action</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1-37eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">88</td>
+            <td class="poster"><img src="https://cdn.theouterhaven.net/wp-content/uploads/2015/06/tumblr_static_6g4gam3gar0og4s8oswsg44ow.jpg" width=100px height=60px></td>
+            <td>Assassination classroom</td>
+            <td>psychological,fantasy,shonen,drama,comedy</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2-47eps,ova-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">89</td>
+            <td class="poster"><img src="https://www.digitallydownloaded.net/wp-content/uploads/2024/05/ss_5c3b4a2a6305d3ce0efc1f02e8ca5dbbc0ea12c4-scaled.jpg" width=100px height=60px></td>
+            <td>The quintessential quintuplets</td>
+            <td>harem,slice of life,school,romcom,mystery</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2-24eps,special-2</span></td>
+          </tr>
+          <tr>
+            <td class="no">90</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/131f32cf27743b9c95b78b4b3fb1c6ee.jpg" width=100px height=60px></td>
+            <td>Konosuba</td>
+            <td>isekai,ecchi,action,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss3-31,mv1/2</span></td>
+          </tr>
+          <tr>
+            <td class="no">91</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/f0e6d521ccbe40a2e3bea9b01bb49d87442ee5717e18ea2999704c2f5e8aa4f7.jpg" width=100px height=60px></td>
+            <td>Another world with my smartphone</td>
+            <td>isekai,ecchi,action,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2 - 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">92</td>
+            <td class="poster"><img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000063384/0aa1bbfd5ec719be1e5b66a8f7c878571aa027ed313db60c7f28443043853474" width=100px height=60px></td>
+            <td>Mushoku tensei</td>
+            <td>isekai,ecchi,action,comedy,romance,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2 - 49eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">93</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/5525651c53b49243de6835134651192c.jpg" width=100px height=60px></td>
+            <td>Re:zero</td>
+            <td>isekai,dark fantasy,action,comedy,romance,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss3- 67eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">94</td>
+            <td class="poster"><img src="https://static.lag.vn/upload/news/24/12/30/danmachi_JOUG.jpg?w=1200&h=800&crop=pad&scale=both&encoder=wic&subsampling=444" width=100px height=60px></td>
+            <td>Danmachi</td>
+            <td>fantasy,shonen,magical,comedy,romance,drama</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss5 - 75eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">95</td>
+            <td class="poster"><img src="https://static.wikia.nocookie.net/oresuki/images/8/88/Pansy_Original.jpg/revision/latest/smart/width/386/height/259?cb=20210106144050" width=100px height=60px></td>
+            <td>Joro kun and glasses girl</td>
+            <td>romance,drama,slice of life,ecchi,comedy,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1- 12eps ova-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">96</td>
+            <td class="poster"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/06/science-fell-in-love.jpg" width=100px height=60px></td>
+            <td>Science fell in love</td>
+            <td>romance,drama,slice of life,ecchi,comedy,sci-fic</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss2- 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">97</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/89b1eea687d76275dabba0d53676cd0f4e323f776298a10b88f89e0949fc47c3.jpg" width=100px height=60px></td>
+            <td>Viral hits</td>
+            <td>romance,drama,slice of life,ecchi,comedy,sci-fic</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">98</td>
+            <td class="poster"><img src="https://hobiverse.com.vn/cdn/shop/articles/cac-nhan-vat-trong-tokyo-revengers_thumbnail_hobi_5aff76dfb1bf49cc8d14b5507daf83aa.jpg?v=1716181649" width=100px height=60px></td>
+            <td>Tokyo revengers</td>
+            <td>action,drama,mystery,supernatural,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss3- 50eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">99</td>
+            <td class="poster"><img src="https://images.immediate.co.uk/production/volatile/sites/3/2025/03/solo-levelling-season-2-finale-993c204.jpg" width=100px height=60px></td>
+            <td>Solo leveling</td>
+            <td>action,drama,magical,fantasy</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2- 25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">100</td>
+            <td class="poster"><img src="https://tierragamer.com/wp-content/uploads/2023/01/TomoJunichirotierragamer-450x253.jpg" width=100px height=60px></td>
+            <td>Tomo chan wa onnanoko</td>
+            <td>romcom,martial art,slice of life</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1- 13eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">101</td>
+            <td class="poster"><img src="https://www.japanpowered.com/media/images/rikka-yuta.jpg" width=100px height=60px></td>
+            <td>Love, chunibyo and other delusion</td>
+            <td>comedy,romance,slice of life,drama</td>
+            <td><font color='yellow'>****</font></td>
+            <td><span class="pill">ss2- 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">102</td>
+            <td class="poster"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/darling-in-the-franxx.jpg" width=100px height=60px></td>
+            <td>Darling in the franxx</td>
+            <td>mecha,sci-fic,romance,comedy,drama,dark fantasy</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1-ep24</span></td>
+          </tr>
+          <tr>
+            <td class="no">103</td>
+            <td class="poster"><img src="https://hobiverse.com.vn/cdn/shop/articles/Chainsaw-Man-Season-2.jpg?v=1747802878" width=100px height=60px></td>
+            <td>Chainsaw man</td>
+            <td>Dark fantasy,action,drama,comedy,supernatural</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1-12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">104</td>
+            <td class="poster"><img src="https://p325k7wa.twic.pics/high/jujutsu-kaisen/jujutsu-kaisen-cursed-clash/00-page-setup/JJK-header-mobile2.jpg?twic=v1/resize=760/step=10/quality=80" width=100px height=60px></td>
+            <td>Jujutsu kaisen</td>
+            <td>Dark fantasy,action,drama,comedy,supernatural</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2- 47eps,mv-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">105</td>
+            <td class="poster"><img src="https://www.joytify.com/blog/en-us/wp-content/uploads/2024/06/featured.jpg" width=100px height=60px></td>
+            <td>Demon slayer</td>
+            <td>Dark fantasy,action,drama,comedy,supernatural</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss4- 63eps, mv-2</span></td>
+          </tr>
+          <tr>
+            <td class="no">106</td>
+            <td class="poster"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/06/Featured-Image-Wano-Cropped.jpg?q=70&fit=contain&w=1200&h=628&dpr=1" width=100px height=60px></td>
+            <td>One piece</td>
+            <td>shonen,fantasy,action,comedy,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">1120 eps +</span></td>
+          </tr>
+          <tr>
+            <td class="no">107</td>
+            <td class="poster"><img src="https://flawfinder.wordpress.com/wp-content/uploads/2023/02/screen-shot-2023-01-31-at-7.53.01-pm.png" width=100px height=60px></td>
+            <td>Black clover</td>
+            <td>shonen,fantasy,action,comedy,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">120 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">108</td>
+            <td class="poster"><img src="https://wibu.com.vn/wp-content/uploads/2025/03/TOKYO-GHOUL.jpg" width=100px height=60px></td>
+            <td>Tokyo ghoul</td>
+            <td>dark fantasy,action,comedy,drama,romance,supernatural</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss4- 48eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">109</td>
+            <td class="poster"><img src="https://img1.wsimg.com/isteam/ip/f493cef6-118a-4cba-a76b-517b7eb6093e/unnamed-6ebfc6a.png" width=100px height=60px></td>
+            <td>Dandadan</td>
+            <td>fantasy,action,comedy,drama,supernatural</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2- 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">110</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/32ec3362fa1fde0657657d94ec839dc89f479cd8d3b28f8f8cee2adc74e93165.jpg" width=100px height=60px></td>
+            <td>Oshi no ko</td>
+            <td>dark fantasy,mystery,crime,romcom,drama</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2- 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">111</td>
+            <td class="poster"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/10/the-main-cast-of-frieren.jpg" width=100px height=60px></td>
+            <td>Frieren: beyound journey's end</td>
+            <td>magical,drama,fantasy,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1-28eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">112</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/c5b267aeb5b6882024f75db745bb009c8fd7a95dfdd2743105f3ea6132d434d7.jpg" width=100px height=60px></td>
+            <td>My hero academia</td>
+            <td>shonen,action,fantasy,drama,sci-fic</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss7- 159eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">113</td>
+            <td class="poster"><img src="https://i.pinimg.com/736x/24/b7/80/24b78058bf3568ca86703cfaf6c8ec24.jpg" width=100px height=60px></td>
+            <td>One punch man</td>
+            <td>shonen,action,supernatural,fantasy,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2 - 23eps, ova-7eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">114</td>
+            <td class="poster"><img src="https://kosei.vn/Files/235/download/van-hoa-nhat/nhan-vat-trong-haikyuu-1.jpg" width=100px height=60px></td>
+            <td>Haikyuu</td>
+            <td>sport,comedy,drama,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss4 - 85eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">115</td>
+            <td class="poster"><img src="https://sm.ign.com/ign_nordic/review/c/cyberpunk-/cyberpunk-edgerunners-review_7qsv.jpg" width=100px height=60px></td>
+            <td>Cyberpunk edgerunners</td>
+            <td>sci-fic,mecha,action,dark fantasy,romcom,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1- 10eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">116</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/5b405ce688d1c7f10bf6f47269d5e91dee9bf65cb71c1fc4e4bdb4f004696748._BR-6_AC_SX720_FMjpg_.jpg" width=100px height=60px></td>
+            <td>Kusuriya no hitorigoto</td>
+            <td>mystery,slice of life,fantasy,romcom,drama</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss2 - 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">117</td>
+            <td class="poster"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/10/berserk-power-of-friendship.jpg" width=100px height=60px></td>
+            <td>Berserk</td>
+            <td>dark fantasy,action,romcom,drama</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss2 - 59eps, mv - 3</span></td>
+          </tr>
+          <tr>
+            <td class="no">118</td>
+            <td class="poster"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/02/Spy-x-Family-header.png" width=100px height=60px></td>
+            <td>Spy x family</td>
+            <td>mystery,crime,fantasy,comedy,drama,action</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2 - 37eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">119</td>
+            <td class="poster"><img src="https://images8.alphacoders.com/893/thumb-1920-893259.png" width=100px height=60px></td>
+            <td>Violet evergarden</td>
+            <td>drama,slice of life,mystery</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1- 13eps, ova-1, mv-1</span></td>
+          </tr>
+          <tr>
+            <td class="no">120</td>
+            <td class="poster"><img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/10/emmi.jpg" width=100px height=60px></td>
+            <td>The eminence in shadow</td>
+            <td>mystery,crime,fantasy,comedy,drama,action,romance</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss2- 32eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">121</td>
+            <td class="poster"><img src="https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2020/08/image4.jpg?fit=696%2C464&ssl=1" width=100px height=60px></td>
+            <td>The seven deadly sins</td>
+            <td>shonen,action,drama,fantasy,magical</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss5 - 100eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">122</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/d06be18365f460449056a4e3bcb22198f5a3c01a72ec9787f2fafd7a100f948b.jpg" width=100px height=60px></td>
+            <td>Grand blue</td>
+            <td>comedy,school,sport,slice of life</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss2 - 24eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">123</td>
+            <td class="poster"><img src="https://cdn.popsww.com/blog/sites/2/2022/04/cac-nhan-vat-trong-boruto-la-con-cua-ai.jpg" width=100px height=60px></td>
+            <td>Boruto: Naruro next generations</td>
+            <td>shonen,fantasy,action,drama</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">290 eps +</span></td>
+          </tr>
+          <tr>
+            <td class="no">124</td>
+            <td class="poster"><img src="https://gamek.mediacdn.vn/133514250583805952/2021/4/7/ol3-1617781452681592256687.jpg" width=100px height=60px></td>
+            <td>Redo of healer</td>
+            <td>ecchi,magic,fantasy,comedy</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1- 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">125</td>
+            <td class="poster"><img src="https://i0.wp.com/frogkun.com/wp-content/uploads/2023/07/marriage1.webp?fit=1200%2C800&ssl=1" width=100px height=60px></td>
+            <td>My happy marriage</td>
+            <td>magic,supernatural,action,romance,drama</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss2 - 26eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">126</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/39125bd1b13d8d92113d850f2332246c.jpg" width=100px height=60px></td>
+            <td>The girl who leapt through time</td>
+            <td>supernatural,sci-fic,drama,mystery</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">127</td>
+            <td class="poster"><img src="https://daknong.1cdn.vn/thumbs/1200x630/2025/02/18/thong-tin-ve-series-shangri-la-frontier-phan-2.jpg" width=100px height=60px></td>
+            <td>Shangri la frontier</td>
+            <td>sci-fic,game,action,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss2 - 50eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">128</td>
+            <td class="poster"><img src="https://static.wikia.nocookie.net/natsumeyuujinchou/images/c/c5/Hotarubi-gin_kissing_the_mask2.jpg/revision/latest?cb=20140306022254" width=100px height=60px></td>
+            <td>To the Forest of Firefly Lights</td>
+            <td>supernatural,romance,drama</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">129</td>
+            <td class="poster"><img src="https://image.tmdb.org/t/p/w1280/82gIQnqdVgQmvLBcjeil4CNvCrJ.jpg" width=100px height=60px></td>
+            <td>Prison school</td>
+            <td>ecchi,comedy,school</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1- 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">130</td>
+            <td class="poster"><img src="https://static.wikia.nocookie.net/nankoko/images/d/dc/Cover.jpg/revision/latest/scale-to-width-down/1200?cb=20190522230805" width=100px height=60px></td>
+            <td>Why the Hell are You Here, Teacher</td>
+            <td>ecchi,comedy,romance,school</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1- 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">131</td>
+            <td class="poster"><img src="https://i0.wp.com/news.qoo-app.com/en/wp-content/uploads/sites/3/2022/08/SK8-the-Infinity-Anime-Confirms-2nd-Season-New-OVA.jpg?fit=1024%2C578&amp;ssl=1" width=100px height=60px></td>
+            <td>Sk8 the infinity</td>
+            <td>sport,comedy,drama</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">ss1 - ep12, ova - 4eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">132</td>
+            <td class="poster"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/a-sign-of-affection-2.jpg" width=100px height=60px></td>
+            <td>A sign of affection</td>
+            <td>romance,drama,slice of life</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1 - 12 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">133</td>
+            <td class="poster"><img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/6485e03512560b001d26c38f.jpg" width=100px height=60px></td>
+            <td>Mieruko chan</td>
+            <td>horror,supernatural,fantasy,comedy,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">134</td>
+            <td class="poster"><img src="https://otakuusamagazine.com/wp-content/uploads/2023/04/tonikawa-S2-dub.jpg" width=100px height=60px></td>
+            <td>Tonikawa</td>
+            <td>romance,drama,comedy,slice of life</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss2 - 25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">135</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/05ee90b9414f41c885277bedd97f199de2a0f706068b901a8d4f305f733d065b.jpg" width=100px height=60px></td>
+            <td>Uzaki chan wants to hang out</td>
+            <td>ecchi,comedy,romance,school</td>
+            <td><font color='yellow'>*****</font></td>
+            <td><span class="pill">ss2 - 25eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">136</td>
+            <td class="poster"><img src="https://www.animenewsnetwork.com/thumbnails/crop1200x630gJ7/cms/episode-review.3/190093/vlcsnap-2022-09-23-17h47m33s016.png.jpg" width=100px height=60px></td>
+            <td>My stepmon's daughter is my ex</td>
+            <td>ecchi,comedy,romance,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1- 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">137</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/M/MV5BMmU4ZTk3Y2YtN2NhZS00MTQwLTk3MTEtNTQ5ZDEwMTBjOTdkXkEyXkFqcGc@._V1_QL75_UX500_CR0,234,500,281_.jpg" width=100px height=60px></td>
+            <td>Tonari no seki kun</td>
+            <td>comedy,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1 - 21eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">138</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=70,width=320,height=180/catalog/crunchyroll/40dd972fda784c4a663eb4c6467931d0.jpg" width=100px height=60px></td>
+            <td>My first girlfriend is a gal</td>
+            <td>comedy,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1 - 10eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">139</td>
+            <td class="poster"><img src="https://bloomreviewsblog.com/wp-content/uploads/2018/03/karakai-jouzu-no-takagi-san-post2.jpg?w=748" width=100px height=60px></td>
+            <td>Karakai jouzu no Takagi-san</td>
+            <td>comedy,romance,slice of life,school</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss3 - 36eps, ova - 1</span></td>
+          </tr>
+          <tr>
+            <td class="no">140</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/65ddb246e1555a1f06660829fc130c77.jpg" width=100px height=60px></td>
+            <td>Bucchigiri</td>
+            <td>action,comedy,school,slice of life</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1 - 12 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">141</td>
+            <td class="poster"><img src="https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2020/02/MV5BNjE5M2VkMTUtY2Q2OC00MzllLWFhZDMtYTA5MDgxM2UxYzkzXkEyXkFqcGdeQXVyOTc3MTcwMzg%40._V1_SX1777_CR001777999_AL_.jpg" width=100px height=60px></td>
+            <td>Her blue sky</td>
+            <td>supernatural,musical,drama,comedy</td>
+            <td><font color='yellow'>********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">142</td>
+            <td class="poster"><img src="https://occ-0-8407-90.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABdcWiQS9Pxv1fFZg7lRKtpIkqNkadJk2Z2s-TuTqJ5wYbbsFIxtQd4C85iFJ4Hbm6MTmlkw1cAJonmdJOCeOH7e46ZXRfgmP2rrG.jpg?r=12f" width=100px height=60px></td>
+            <td>The anthem of the heart</td>
+            <td>school,drama,mystery,romance</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">movie</span></td>
+          </tr>
+          <tr>
+            <td class="no">143</td>
+            <td class="poster"><img src="https://a.ltrbxd.com/resized/sm/upload/h7/n4/xm/ph/and%20you%20thought-1200-1200-675-675-crop-000000.jpg?v=3f43cc6c12" width=100px height=60px></td>
+            <td>And you thought there is never a girl online</td>
+            <td>game,slice of life,romcom,drama,ecchi</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">144</td>
+            <td class="poster"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/G6J0EEP0R-backdrop_wide" width=100px height=60px></td>
+            <td>Do You Love Your Mom and Her Two-Hit Multi-Target Attacks</td>
+            <td>game,slice of life,comedy,ecchi</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">145</td>
+            <td class="poster"><img src="https://i.pinimg.com/564x/46/78/44/46784477fb1f152ada8cdf67f3d859d3.jpg" width=100px height=60px></td>
+            <td>Yamada-kun to 7-nin no Majo</td>
+            <td>magic,action,harem,romcom</td>
+            <td><font color='yellow'>******</font></td>
+            <td><span class="pill">ss1- 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">146</td>
+            <td class="poster"><img src="https://m.media-amazon.com/images/S/pv-target-images/e00d22d8b60e611f0970ddae1dfd419b011252ec13cc55d5a2b8bf442dba36fd.jpg" width=100px height=60px></td>
+            <td>Majikoi</td>
+            <td>ecchi,comedy,drama,action</td>
+            <td><font color='yellow'>*****</font></td>
+            <td><span class="pill">ss1- ep12</span></td>
+          </tr>
+          <tr>
+            <td class="no">147</td>
+            <td class="poster"><img src="https://a.storyblok.com/f/178900/640x360/319dc0fe98/37f91814e05502b44633ed25a1f1c31b1613357084_main.jpg/m/filters:quality(95)format(webp)" width=100px height=60px></td>
+            <td>Koikimo</td>
+            <td>romance,drama,comedy,school,slice of life</td>
+            <td><font color='yellow'>**********</font></td>
+            <td><span class="pill">ss1 - 12eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">148</td>
+            <td class="poster"><img src="https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABdiiVn1ZwD39u1kr6G1jMBZjpd344ThBld5fqNLN8-sviT4tdkjTP1rIAvlOkLO3M3kcwxk8B86vQ7UJKkEo5oyY2AqUdgsGre02.jpg?r=a6b" width=100px height=60px></td>
+            <td>Fireforce</td>
+            <td>shonen,fantasy,action,comedy,sci-fic</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss3 - 75eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">149</td>
+            <td class="poster"><img src="https://otakuusamagazine.com/wp-content/uploads/2023/03/kengan-ashura-sept2.jpg" width=100px height=60px></td>
+            <td>Kengan ashura</td>
+            <td>martial art,action,sport,fantasy</td>
+            <td><font color='yellow'>*******</font></td>
+            <td><span class="pill">ss2 - 52 eps</span></td>
+          </tr>
+          <tr>
+            <td class="no">150</td>
+            <td class="poster"><img src="https://comicbook.com/wp-content/uploads/sites/4/2023/07/aff58a02-c90d-4fef-bbfa-54ed819e951b.jpg?w=1024" width=100px height=60px></td>
+            <td>Hajime no ippo</td>
+            <td>martial art,action,sport,fantasy</td>
+            <td><font color='yellow'>*********</font></td>
+            <td><span class="pill">ss3 - 126eps, special - 1,ova - 1,mv -1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    const table = document.getElementById('animeTable');
+    const rows = table.getElementsByTagName('tr');
+
+    searchBar.addEventListener('keyup', function() {
+      const filter = searchBar.value.toLowerCase();
+      for (let i = 1; i < rows.length; i++) { // skip header row
+        const nameTd = rows[i].getElementsByTagName('td')[2]; // Name column
+        const typeTd = rows[i].getElementsByTagName('td')[3]; // Types column
+        if (nameTd && typeTd) {
+          const text = (nameTd.textContent + " " + typeTd.textContent).toLowerCase();
+          rows[i].style.display = text.includes(filter) ? "" : "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
