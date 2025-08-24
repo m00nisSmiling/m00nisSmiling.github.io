@@ -1,156 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Completed Anime List</title>
   <style>
-    :root{
-      --bg: #0b1020;
-      --card: #121830;
-      --ink: #e9ecf3;
-      --muted: #a9b1c7;
-      --accent: #6ea8fe;
-      --border: #233055;
-      --row: #0e1530;
-      --row-alt: #0c132a;
-      --glow: 0 10px 35px rgba(110,168,254,0.25);
-      --radius: 16px;
-    }
-    html, body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--ink);
-      font: 500 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-            Roboto, "Helvetica Neue", Arial;
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
       margin: 0;
+      padding: 20px;
     }
-    .wrap {
-      max-width: 1200px;
-      margin: 48px auto;
-      padding: 0 20px;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
     }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--glow);
-      overflow: hidden;
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ccc;
     }
-    header {
-      padding: 22px 24px;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(90deg, rgba(110,168,254,0.15), rgba(110,168,254,0.03));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    h1 { font-size: 24px; margin: 0; }
-    .sub { color: var(--muted); font-size: 14px; }
-    #searchBar {
-      padding: 8px 12px;
+
+    /* Search bar */
+    #searchInput {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
       border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #0d1428;
-      color: var(--ink);
-      font-size: 14px;
-      min-width: 220px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: #1f2937;
+      color: white;
     }
+
+    /* Table container for responsiveness */
     .table-container {
       width: 100%;
-      overflow-x: auto; /* allows scroll on small screens */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
+
+    /* Table styling */
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 900px;
-    }
-    thead th {
-      text-align: left;
-      font-weight: 700;
-      color: #dbe6ff;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    tbody td {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-    tbody tr:nth-child(even){ background: var(--row-alt); }
-    tbody tr:nth-child(odd){ background: var(--row); }
-    tbody tr:hover { background: rgba(110,168,254,0.10); }
-    .no { width: 60px; color: var(--muted); }
-    .poster img {
-      width: 80px;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-    .pill {
-      display: inline-block;
-      padding: 2px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--muted);
+      margin: 10px 0;
+      font-size: 16px;
+      background: #121826;
+      color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    /* 📱 Mobile view: turn table into stacked cards */
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+
+    th {
+      background: #1f2937;
+    }
+
+    /* Images */
+    td img {
+      max-width: 100px;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    /* Responsive design */
     @media (max-width: 768px) {
       table, thead, tbody, th, td, tr {
         display: block;
+        width: 100%;
       }
+
       thead {
-        display: none; /* hide header row */
+        display: none;
       }
-      tbody tr {
-        margin-bottom: 16px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: var(--row);
-        padding: 12px;
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #2c2c2c;
+        border-radius: 8px;
+        padding: 10px;
+        background: #1a1f2e;
       }
-      tbody td {
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 6px;
+
+      td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
       }
-      tbody td::before {
+
+      td::before {
         content: attr(data-label);
-        font-weight: 600;
-        color: var(--accent);
-        margin-right: 10px;
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: #aaa;
       }
-      .poster img { width: 100px; }
+
+      td img {
+        max-width: 80%;
+        display: block;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <header>
-        <div>
-          <h1>My completed anime list</h1>
-          <div class="sub">With posters, genres, and ratings</div>
-        </div>
-        <input type="text" id="searchBar" placeholder="Search by name or type...">
-      </header>
-      <table id="animeTable">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Poster</th>
-            <th>Name</th>
-            <th>Types</th>
-            <th>Personal Rating</th>
-            <th>Total Seasons &amp; eps</th>
-          </tr>
-        </thead>
-        <tbody>
+
+  <h1>My completed anime list</h1>
+  <p>With posters, genres, and ratings</p>
+
+  <input type="text" id="searchInput" placeholder="Search by name or type...">
+
+  <div class="table-container">
+    <table id="animeTable">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Types</th>
+          <th>Rating</th>
+          <th>Season/Eps</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr>
             <td class="no">1</td>
             <td class="poster"><img src="https://i0.wp.com/thevaultpublication.com/wp-content/uploads/2014/11/the-garden-of-words-takao-and-yukino.jpg?fit=1200%2C695&ssl=1" width=100px height=60px></td>
@@ -1351,27 +1338,26 @@
             <td><font color='yellow'>*********</font></td>
             <td><span class="pill">ss3 - 126eps, special - 1,ova - 1,mv -1</span></td>
           </tr>
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table>
   </div>
 
   <script>
-    const searchBar = document.getElementById('searchBar');
-    const table = document.getElementById('animeTable');
-    const rows = table.getElementsByTagName('tr');
-
-    searchBar.addEventListener('keyup', function() {
-      const filter = searchBar.value.toLowerCase();
-      for (let i = 1; i < rows.length; i++) { // skip header row
-        const nameTd = rows[i].getElementsByTagName('td')[2]; // Name column
-        const typeTd = rows[i].getElementsByTagName('td')[3]; // Types column
-        if (nameTd && typeTd) {
-          const text = (nameTd.textContent + " " + typeTd.textContent).toLowerCase();
-          rows[i].style.display = text.includes(filter) ? "" : "none";
+    // Search by name or type
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      let filter = this.value.toLowerCase();
+      let rows = document.querySelectorAll("#animeTable tbody tr");
+      rows.forEach(row => {
+        let name = row.cells[2].innerText.toLowerCase();
+        let type = row.cells[3].innerText.toLowerCase();
+        if (name.includes(filter) || type.includes(filter)) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
         }
-      }
+      });
     });
   </script>
+
 </body>
 </html>
