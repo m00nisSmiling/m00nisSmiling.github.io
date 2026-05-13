@@ -16,9 +16,18 @@
         .deck-container {
             perspective: 1200px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 4rem;
+            /* Default for mobile/tablet */
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        /* Laptop/Desktop View: Force exactly 5 columns */
+        @media (min-width: 1280px) {
+            .deck-container {
+                grid-template-columns: repeat(5, 1fr);
+                padding: 4rem 2rem;
+            }
         }
 
         /* Pokemon Card Style */
@@ -33,11 +42,11 @@
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            min-height: 380px; /* Ensures consistent size */
+            min-height: 380px; 
         }
 
         .poke-card:hover {
-            transform: rotateX(0deg) rotateY(0deg) scale(1.1) translateY(-20px);
+            transform: rotateX(0deg) rotateY(0deg) scale(1.05) translateY(-15px);
             border-color: #4ade80; 
             z-index: 50;
             box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
@@ -49,7 +58,7 @@
             right: 10px;
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: bold;
             text-transform: uppercase;
             z-index: 10;
@@ -64,7 +73,7 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.05) 45%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 55%, transparent 60%);
             pointer-events: none;
-            border-radius: 15px;
+            border-radius: 11px; /* Match inner border radius */
         }
 
         .title-area {
@@ -73,16 +82,16 @@
         }
     </style>
 </head>
-<body class="min-h-screen p-8">
+<body class="min-h-screen p-4 md:p-8">
 
-    <header class="text-center mb-16">
+    <header class="text-center mb-12">
         <h1 class="text-5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 uppercase">
             History 
         </h1>
         <p class="font-mono text-xs text-gray-500 mt-4 underline decoration-green-500/50">Of m00nissmiling</p>
     </header>
 
-    <div id="portfolio-grid" class="deck-container max-w-7xl mx-auto">
+    <div id="portfolio-grid" class="deck-container max-w-[1600px] mx-auto">
         <!-- Cards Injected Here -->
     </div>
 
@@ -96,40 +105,40 @@
                 const data = await response.json();
                 const grid = document.getElementById('portfolio-grid');
 
-grid.innerHTML = data.map(item => `
-    <div class="poke-card">
-        <div class="risk-badge ${item.risk}">${item.risk}</div>
-        
-        <!-- Clickable Image Container -->
-        <div class="p-2">
-            <div class="bg-black rounded-lg overflow-hidden border border-white/10 relative group-hover:border-[#4ade80]/50 transition-colors">
-                <a href="${item.imageUrl}" target="_blank" title="View Full Evidence">
-                    <img src="${item.imageUrl}" class="w-full h-48 object-cover hover:opacity-80 transition-opacity cursor-pointer">
-                </a>
-                <!-- Country Overlay -->
-                <div class="absolute bottom-1 right-1 bg-black/70 px-2 py-0.5 rounded text-[8px] font-mono text-white uppercase tracking-tighter pointer-events-none">
-                    LOC: ${item.country || 'Unknown'}
+                grid.innerHTML = data.map(item => `
+                <div class="poke-card group">
+                    <div class="risk-badge ${item.risk}">${item.risk}</div>
+                    
+                    <!-- Clickable Image Container -->
+                    <div class="p-2">
+                        <div class="bg-black rounded-lg overflow-hidden border border-white/10 relative">
+                            <a href="${item.imageUrl}" target="_blank" title="View Full Evidence">
+                                <img src="${item.imageUrl}" class="w-full h-40 object-cover hover:opacity-80 transition-opacity cursor-pointer">
+                            </a>
+                            <!-- Country Overlay -->
+                            <div class="absolute bottom-1 right-1 bg-black/70 px-2 py-0.5 rounded text-[8px] font-mono text-white uppercase tracking-tighter pointer-events-none">
+                                 ${item.country || 'Unknown'}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Content -->
+                    <div class="p-4 flex flex-col flex-grow">
+                        <div class="text-[8px] font-mono text-blue-400 uppercase tracking-widest mb-1">
+                             ${item.project || 'Private'}
+                        </div>
+                        
+                        <div class="title-area flex-grow">
+                            <h3 class="text-md font-bold text-white leading-tight">${item.title}</h3>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-4 pt-3 border-t border-white/5 font-mono text-[9px]">
+                            <span class="text-green-400 italic">${item.type}</span>
+                            <span class="text-gray-500">${item.date}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Info Content -->
-        <div class="p-4 flex flex-col flex-grow">
-            <div class="text-[9px] font-mono text-blue-400 uppercase tracking-widest mb-1">
-                PROJECT: ${item.project || 'Private'}
-            </div>
-            
-            <div class="title-area flex-grow">
-                <h3 class="text-lg font-bold text-white leading-tight">${item.title}</h3>
-            </div>
-
-            <div class="flex justify-between items-center mt-4 pt-3 border-t border-white/5 font-mono text-[10px]">
-                <span class="text-green-400 italic">${item.type}</span>
-                <span class="text-gray-500">${item.date}</span>
-            </div>
-        </div>
-    </div>
-`).join('');
+                `).join('');
             } catch (err) {
                 console.error("Failed to load cards:", err);
             }
