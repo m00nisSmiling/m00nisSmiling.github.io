@@ -1,0 +1,16 @@
+[
+  {
+    "title": "IDOR in Financial Module",
+    "date": "2024-03-15",
+    "type": "Web API",
+    "risk": "Critical",
+    "imageUrl": "https://path-to-your-image.com/letter1.png"
+  },
+  {
+    "title": "Firebase Misconfiguration",
+    "date": "2024-05-10",
+    "type": "Cloud Security",
+    "risk": "High",
+    "imageUrl": "https://path-to-your-image.com/letter2.png"
+  }
+]
