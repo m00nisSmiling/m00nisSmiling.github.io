@@ -24,7 +24,7 @@
     "country":"Myanmar",
     "type": "Mobile/API",
     "risk": "High",
-    "imageUrl": "./portfolio/shwemeeain.jpg"
+    "imageUrl": "./portfolio/shwemeeain.png"
   },
     {
     "title": "Reported many database & authorization related vulnerabilities in ChattyCat & TheSchoolFlow",
