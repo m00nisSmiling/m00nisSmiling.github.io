@@ -1,7 +1,7 @@
 [
   {
     "title": "44th place",
-    "date": "2024-10-02",
+    "date": "2023",
     "project":"Cybergon CTF 2023",
     "country":"Myanmar",
     "type": "CyberSecurity",
@@ -9,7 +9,7 @@
     "imageUrl": "./portfolio/cybergon2023.jpg"
   },
   {
-    "title": "$25 Bounty",
+    "title": "$25 bounty by reporting premium feature bypass vulnerability",
     "date": "2024-10-02",
     "project":"The Will Power Myanmar Audiobook",
     "country":"Myanmar",
