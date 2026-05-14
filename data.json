@@ -1,5 +1,14 @@
 [
   {
+    "title": "Got my first bounty ($18.75) by reporting critical admin panel bypass in ExcellenceSoftwareCompany webapp",
+    "date": "2023-04-11",
+    "project":"Excellence Software",
+    "country":"Myanmar",
+    "type": "Web/API",
+    "risk": "Critical",
+    "imageUrl": "./portfolio/1stbounty.jpg"
+  },
+  {
     "title": "Got appreciation letter and $25 bounty by reporting premium feature bypass vulnerability in TheWillPower audiobook application",
     "date": "2024-10-02",
     "project":"The Will Power Myanmar",
@@ -61,5 +70,6 @@
     "type": "Web/API",
     "risk": "Critical",
     "imageUrl": "./portfolio/magicgamestore.jpg"
-  }
+  },
+    
 ]
