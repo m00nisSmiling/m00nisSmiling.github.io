@@ -6,7 +6,34 @@
     "country":"Myanmar",
     "type": "Web/API",
     "risk": "Critical",
-    "imageUrl": "./portfolio/1stbounty.jpg"
+    "imageUrl": "./portfolio/1stbounty.png"
+  },  
+  {
+    "title": "Got 3$ bounty by reporting medium risk vulnerability in ModGameMm webapp",
+    "date": "2023",
+    "project":"Mod Game Mm",
+    "country":"Myanmar",
+    "type": "Web/API",
+    "risk": "Medium",
+    "imageUrl": "./portfolio/2ndbounty.jpg"
+  },
+  {
+    "title": "Got $50 bounty by reporting high risk authentication bypass vulnerability in 2dGames webapp",
+    "date": "2023-06-28",
+    "project":"2D Games",
+    "country":"Myanmar",
+    "type": "Web/API",
+    "risk": "High",
+    "imageUrl": "./portfolio/3rdbounty.jpg"
+  },
+  {
+    "title": "Got $50 bounty by reporting LFI to admin panel access vulnerability in BlueOcean webapp",
+    "date": "2023-08-08",
+    "project":"Blue Ocean",
+    "country":"Myanmar",
+    "type": "Web/API",
+    "risk": "High",
+    "imageUrl": "./portfolio/8823blueocean.jpg"
   },
   {
     "title": "Got appreciation letter and $25 bounty by reporting premium feature bypass vulnerability in TheWillPower audiobook application",
