@@ -1,6 +1,6 @@
 [
   {
-    "title": "Got appreciation letter & $25 bounty by reporting premium feature bypass vulnerability in TheWillPower audiobook application",
+    "title": "Got appreciation letter and $25 bounty by reporting premium feature bypass vulnerability in TheWillPower audiobook application",
     "date": "2024-10-02",
     "project":"The Will Power Myanmar",
     "country":"Myanmar",
@@ -9,7 +9,7 @@
     "imageUrl": "./portfolio/thewillpower.jpg"
   },
     {
-    "title": "Reported many authentication/authorization related vulnerabilities in PetSentry application",
+    "title": "Got appreciation letter by reporting many authentication/authorization related vulnerabilities in PetSentry application",
     "date": "2025-06-12",
     "project":"Pet Sentry",
     "country":"Myanmar",
@@ -18,7 +18,7 @@
     "imageUrl": "./portfolio/petsentry.jpg"
   },
     {
-    "title": "Reported 40GB+ data leakage vulnerability in ShweMeeEain application",
+    "title": "Being thanked for reporting 40GB+ data leakage vulnerability in ShweMeeEain application",
     "date": "2025-09-26",
     "project":"Shwe Mee Eain",
     "country":"Myanmar",
@@ -27,13 +27,31 @@
     "imageUrl": "./portfolio/shwemeeain.png"
   },
     {
-    "title": "Reported many database & authorization related vulnerabilities in ChattyCat & TheSchoolFlow",
+    "title": "Got $125 by reporting many database & authorization related vulnerabilities in ChattyCat & TheSchoolFlow ",
     "date": "2026-03-23",
     "project":"Chatty Cat & The School Flow",
     "country":"Myanmar",
     "type": "Web/API",
     "risk": "High",
     "imageUrl": "./portfolio/the_school_flow.jpg"
+  },
+    {
+    "title": "Got appreciation letter by reporting many database/api vulnerabilities in France company",
+    "date": "2026-03-25",
+    "project":"Sherfi/Emeis Medical Platform",
+    "country":"France",
+    "type": "Web/API",
+    "risk": "Critical",
+    "imageUrl": "./portfolio/sherfi2026.jpg"
+  },
+    {
+    "title": "$25 Bounty From The Will Power Myanmar",
+    "date": "2024-10-02",
+    "project":"The Will Power Myanmar Audiobook",
+    "country":"Myanmar",
+    "type": "Web/API",
+    "risk": "High",
+    "imageUrl": "./portfolio/thewillpower.jpg"
   },
     {
     "title": "$25 Bounty From The Will Power Myanmar",
